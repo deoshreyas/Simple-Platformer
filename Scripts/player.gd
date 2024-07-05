@@ -47,6 +47,7 @@ func move_state(input_axis):
 		if Input.is_action_just_pressed("up") or buffered_jump:
 			velocity.y = JUMP_SPEED
 			buffered_jump = false
+			SoundRoot.play_sound("jump")
 	else:
 		sprite.play("jump")
 		if Input.is_action_just_released("up") and velocity.y < JUMP_RELEASE_FORCE:
@@ -54,6 +55,7 @@ func move_state(input_axis):
 		if Input.is_action_just_pressed("up") and double_jump>0:
 			velocity.y = JUMP_SPEED
 			double_jump -= 1
+			SoundRoot.play_sound("jump")
 		if Input.is_action_just_pressed("up"):
 			buffered_jump = true 
 			jump_buffer_timer.start()
@@ -106,3 +108,7 @@ func _on_jump_buffer_timeout():
 
 func _on_coyote_timer_timeout():
 	coyote_jump = false
+	
+func player_died():
+	SoundRoot.play_sound("hurt")
+	queue_free()
