@@ -1,19 +1,77 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh7ps4c1emje8"]
+[gd_scene load_steps=9 format=3 uid="uid://dh7ps4c1emje8"]
 
+[ext_resource type="Script" path="res://Scripts/spike_enemy.gd" id="1_0q2t0"]
 [ext_resource type="Texture2D" uid="uid://dygynwh54n0rt" path="res://Assets/Tilemaps/tilemap-characters_packed.png" id="1_sqq8e"]
 [ext_resource type="PackedScene" uid="uid://bgc28rxqy1l2w" path="res://Scenes/hitbox.tscn" id="2_ky051"]
-
-[sub_resource type="Curve2D" id="Curve2D_tscqh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18hie"]
 radius = 9.0
 
+[sub_resource type="Animation" id="Animation_fc38d"]
+resource_name = "PathBounce"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_dda72"]
+resource_name = "PathLoop"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bttlo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_avdvj"]
+_data = {
+"PathBounce": SubResource("Animation_fc38d"),
+"PathLoop": SubResource("Animation_dda72"),
+"RESET": SubResource("Animation_bttlo")
+}
+
 [node name="SpikeEnemyPath" type="Path2D"]
-curve = SubResource("Curve2D_tscqh")
+script = ExtResource("1_0q2t0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+progress = 6.42931
+rotates = false
 
 [node name="SpikeEnemy" type="Node2D" parent="PathFollow2D"]
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/SpikeEnemy"]
 texture = ExtResource("1_sqq8e")
@@ -24,3 +82,9 @@ region_rect = Rect2(191.31, -0.208942, 24.6215, 24.6215)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/SpikeEnemy/Hitbox"]
 shape = SubResource("CircleShape2D_18hie")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "PathLoop"
+libraries = {
+"": SubResource("AnimationLibrary_avdvj")
+}

@@ -60,7 +60,6 @@ MAX_SPEED = 75
 JUMP_SPEED = -160
 JUMP_RELEASE_FORCE = -40
 FALL_GRAVITY = 2
-DOUBLE_JUMPS = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ho43i")

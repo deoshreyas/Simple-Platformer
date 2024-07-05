@@ -15,14 +15,14 @@ var state = MOVE
 @export var CLIMB_SPEED = 50
 @export var DOUBLE_JUMPS = 1
 
-@onready var sprite = $AnimatedSprite2D
-@onready var ladderCheck = $LadderCheckRaycast
-@onready var jump_buffer_timer = $JumpBuffer
-@onready var coyote_jump_timer = $CoyoteTimer
+@onready var sprite: = $AnimatedSprite2D
+@onready var ladderCheck: = $LadderCheckRaycast
+@onready var jump_buffer_timer: = $JumpBuffer
+@onready var coyote_jump_timer: = $CoyoteTimer
 
 var double_jump = DOUBLE_JUMPS
 var buffered_jump = false
-var coyote_jump
+var coyote_jump : bool
 
 func _physics_process(_delta):
 	var input_axis_x = Input.get_axis("left", "right")
@@ -105,4 +105,4 @@ func _on_jump_buffer_timeout():
 	buffered_jump = false
 
 func _on_coyote_timer_timeout():
-	coyote_jump_timer = false
+	coyote_jump = false
