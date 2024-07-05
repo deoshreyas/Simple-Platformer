@@ -1,11 +1,10 @@
 extends Area2D
 
-@onready var active = $Active 
-@onready var inactive = $Inactive
+var active = true
 
 func _on_body_entered(body):
-	if body is Player:
-		Global.checkpoint = body.position
-		print(Global.checkpoint)
-		inactive.visible = false 
-		active.visible = true
+	if not body is Player: return 
+	if not active: return
+	$AnimatedSprite2D.play("checked")
+	active = false
+	Events.hit_checkpoint.emit(position)

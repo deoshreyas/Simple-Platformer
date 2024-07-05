@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgkq07bp6ml7e"]
+[gd_scene load_steps=12 format=3 uid="uid://bgkq07bp6ml7e"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_g4prq"]
+[ext_resource type="PackedScene" uid="uid://msfq5ns2hicp" path="res://Scenes/player.tscn" id="2_f67qs"]
 [ext_resource type="PackedScene" uid="uid://65p5w4vksgvf" path="res://Scenes/world_tiles.tscn" id="2_gpix8"]
 [ext_resource type="PackedScene" uid="uid://duu8sbbcb37rf" path="res://Scenes/spikes.tscn" id="3_vmwy5"]
 [ext_resource type="PackedScene" uid="uid://lsf6owvxwvnt" path="res://Scenes/walking_enemy.tscn" id="4_0msdr"]
 [ext_resource type="PackedScene" uid="uid://cdeq20by6wg4m" path="res://Scenes/ladder.tscn" id="5_6sptk"]
 [ext_resource type="PackedScene" uid="uid://dh7ps4c1emje8" path="res://Scenes/spike_enemy.tscn" id="6_aigj7"]
 [ext_resource type="PackedScene" uid="uid://blp5f3cg4xgak" path="res://Scenes/checkpoint.tscn" id="7_ajjq2"]
+[ext_resource type="PackedScene" uid="uid://b5ugkn30lyum0" path="res://Scenes/smash_enemy.tscn" id="9_kj8ek"]
 
 [sub_resource type="Curve2D" id="Curve2D_leff7"]
 _data = {
@@ -64,4 +66,15 @@ AnimationType = 1
 speed = 2.5
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_ajjq2")]
-position = Vector2(364, 55)
+position = Vector2(364, 63)
+
+[node name="Player" parent="." instance=ExtResource("2_f67qs")]
+position = Vector2(217, 11)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Checkpoint2" parent="." instance=ExtResource("7_ajjq2")]
+position = Vector2(22, 135)
+
+[node name="SmashEnemy" parent="." instance=ExtResource("9_kj8ek")]
+position = Vector2(277, -58)

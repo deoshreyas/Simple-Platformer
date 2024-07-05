@@ -19,6 +19,7 @@ var state = MOVE
 @onready var ladderCheck: = $LadderCheckRaycast
 @onready var jump_buffer_timer: = $JumpBuffer
 @onready var coyote_jump_timer: = $CoyoteTimer
+@onready var RemoteTransform = $RemoteTransform2D
 
 var double_jump = DOUBLE_JUMPS
 var buffered_jump = false
@@ -111,4 +112,8 @@ func _on_coyote_timer_timeout():
 	
 func player_died():
 	SoundRoot.play_sound("hurt")
+	Events.player_died.emit()
 	queue_free()
+
+func connect_camera(camera):
+	RemoteTransform.remote_path = camera.get_path()

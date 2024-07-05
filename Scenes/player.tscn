@@ -53,6 +53,7 @@ animations = [{
 size = Vector2(10, 16)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 10
 collision_layer = 2
 script = ExtResource("1_ej4oq")
 GRAVITY = 5
@@ -85,7 +86,7 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="timeout" from="JumpBuffer" to="." method="_on_jump_buffer_timeout"]
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

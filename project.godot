@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SoundRoot="*res://Assets/SFX/sound_root.tscn"
-Global="*res://Scripts/global.gd"
+Events="*res://Scripts/events.gd"
 
 [display]
 

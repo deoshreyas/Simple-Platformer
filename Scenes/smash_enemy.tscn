@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5ugkn30lyum0"]
+
+[ext_resource type="Texture2D" uid="uid://dygynwh54n0rt" path="res://Assets/Tilemaps/tilemap-characters_packed.png" id="1_1yboj"]
+[ext_resource type="Script" path="res://Scripts/smash_enemy.gd" id="1_s7pi0"]
+[ext_resource type="PackedScene" uid="uid://bgc28rxqy1l2w" path="res://Scenes/hitbox.tscn" id="2_cum8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi0la"]
+atlas = ExtResource("1_1yboj")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmlu1"]
+atlas = ExtResource("1_1yboj")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v438n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi0la")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmlu1")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usnpo"]
+size = Vector2(18, 18)
+
+[node name="SmashEnemy" type="Node2D"]
+position = Vector2(0, -9)
+script = ExtResource("1_s7pi0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v438n")
+animation = &"down"
+
+[node name="Hitbox" parent="." instance=ExtResource("2_cum8t")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_usnpo")
+
+[node name="CheckGroundCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
