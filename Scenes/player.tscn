@@ -53,6 +53,7 @@ animations = [{
 size = Vector2(10, 16)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_ej4oq")
 GRAVITY = 5
 MAX_SPEED = 75
@@ -69,3 +70,5 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_tom5b")
+
+[node name="Camera2D" type="Camera2D" parent="."]

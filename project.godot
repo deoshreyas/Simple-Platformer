@@ -44,8 +44,14 @@ up={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Characters"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.631373, 0.917647, 1, 1)
 textures/canvas_textures/default_texture_filter=0
