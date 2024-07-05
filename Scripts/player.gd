@@ -112,8 +112,8 @@ func _on_coyote_timer_timeout():
 	
 func player_died():
 	SoundRoot.play_sound("hurt")
-	Events.player_died.emit()
 	queue_free()
+	Events.player_died.emit()
 
 func connect_camera(camera):
 	RemoteTransform.remote_path = camera.get_path()

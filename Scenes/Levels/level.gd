@@ -16,6 +16,7 @@ func _ready():
 func _on_player_died():
 	var new_player = player_scene.instantiate()
 	new_player.position = player_spawn_pos
+	await get_tree().create_timer(0.5).timeout
 	add_child(new_player)
 	new_player.connect_camera(camera)
 	

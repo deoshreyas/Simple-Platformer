@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://5tmqdyjn6ijg"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_6yvq3"]
+[ext_resource type="PackedScene" uid="uid://msfq5ns2hicp" path="res://Scenes/player.tscn" id="1_bhb8i"]
+[ext_resource type="PackedScene" uid="uid://bgc28rxqy1l2w" path="res://Scenes/hitbox.tscn" id="3_11sjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnhy0"]
+size = Vector2(1319, 46)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6yvq3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_bhb8i")]
+
+[node name="Hitbox" parent="." instance=ExtResource("3_11sjm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(312.5, 436)
+shape = SubResource("RectangleShape2D_bnhy0")

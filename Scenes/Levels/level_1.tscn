@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bau5rfkcdmofw"]
+
+[ext_resource type="PackedScene" uid="uid://5tmqdyjn6ijg" path="res://Scenes/Levels/level.tscn" id="1_3fago"]
+[ext_resource type="PackedScene" uid="uid://65p5w4vksgvf" path="res://Scenes/world_tiles.tscn" id="2_xpnlu"]
+[ext_resource type="PackedScene" uid="uid://duu8sbbcb37rf" path="res://Scenes/spikes.tscn" id="3_ifg4l"]
+[ext_resource type="PackedScene" uid="uid://dfsh8mihf4j38" path="res://Scenes/door.tscn" id="4_xxf6y"]
+[ext_resource type="PackedScene" uid="uid://dh8r2v4reppfh" path="res://Scenes/Levels/level_2.tscn" id="5_3wa7l"]
+
+[node name="Level1" instance=ExtResource("1_3fago")]
+
+[node name="WorldTiles" parent="." index="2" instance=ExtResource("2_xpnlu")]
+layer_0/tile_data = PackedInt32Array(524288, 131072, 1, 524289, 131072, 1, 524290, 131072, 1, 524291, 131072, 1, 524292, 131072, 1, 524293, 131072, 1, 524294, 131072, 1, 524295, 131072, 1, 524296, 131072, 1, 524297, 131072, 1, 524298, 131072, 1, 524299, 131072, 1, 524300, 131072, 1, 524301, 131072, 1, 524302, 131072, 1, 524303, 131072, 1, 524304, 131072, 1, 524305, 131072, 1, 589824, 131072, 7, 589825, 131072, 7, 589826, 131072, 7, 589827, 131072, 7, 589828, 131072, 7, 589829, 131072, 7, 589830, 131072, 7, 589831, 131072, 7, 589832, 131072, 7, 589833, 131072, 7, 589834, 131072, 7, 589839, 131072, 7, 589840, 131072, 7, 589841, 131072, 7, 589838, 131072, 7, 589837, 131072, 7, 589836, 131072, 7, 589835, 131072, 7, 393218, 65536, 0, 393219, 131072, 0, 393220, 196608, 0, 262150, 0, 0, 196616, 0, 0, 131082, 65536, 0, 131083, 131072, 0, 131084, 196608, 0, 65550, 65536, 0, 65551, 131072, 0, 65552, 131072, 0, 65553, 196608, 0, 589842, 131072, 7, 524306, 131072, 1, 524307, 131072, 1, 589843, 131072, 7, 589844, 196608, 7, 524308, 196608, 1, 589823, 65536, 1, 655359, 65536, 7)
+
+[node name="Spikes" parent="." index="3" instance=ExtResource("3_ifg4l")]
+position = Vector2(247, 145)
+
+[node name="Spikes2" parent="." index="4" instance=ExtResource("3_ifg4l")]
+position = Vector2(264, 145)
+
+[node name="Door" parent="." index="6" instance=ExtResource("4_xxf6y")]
+position = Vector2(358, 132)
+level = ExtResource("5_3wa7l")

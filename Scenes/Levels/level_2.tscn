@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh8r2v4reppfh"]
+
+[ext_resource type="PackedScene" uid="uid://5tmqdyjn6ijg" path="res://Scenes/Levels/level.tscn" id="1_uhsyk"]
+[ext_resource type="PackedScene" uid="uid://65p5w4vksgvf" path="res://Scenes/world_tiles.tscn" id="2_vsywc"]
+[ext_resource type="PackedScene" uid="uid://cdeq20by6wg4m" path="res://Scenes/ladder.tscn" id="3_flp76"]
+[ext_resource type="PackedScene" uid="uid://duu8sbbcb37rf" path="res://Scenes/spikes.tscn" id="4_nwqi5"]
+[ext_resource type="PackedScene" uid="uid://lsf6owvxwvnt" path="res://Scenes/walking_enemy.tscn" id="5_xhqep"]
+
+[node name="Level2" instance=ExtResource("1_uhsyk")]
+
+[node name="Player" parent="." index="1"]
+position = Vector2(-46, 123)
+
+[node name="WorldTiles" parent="." index="3" instance=ExtResource("2_vsywc")]
+layer_0/tile_data = PackedInt32Array(589824, 131072, 1, 589825, 131072, 1, 589826, 131072, 1, 589827, 131072, 1, 589828, 131072, 1, 589829, 131072, 1, 589830, 131072, 1, 589831, 131072, 1, 589832, 131072, 1, 589833, 131072, 1, 589834, 131072, 1, 589835, 131072, 1, 589836, 131072, 1, 589837, 131072, 1, 589838, 131072, 1, 589839, 131072, 1, 589840, 131072, 1, 589841, 131072, 1, 655360, 131072, 7, 655361, 131072, 7, 655362, 131072, 7, 655363, 131072, 7, 655364, 131072, 7, 655365, 131072, 7, 655366, 131072, 7, 655367, 131072, 7, 655368, 131072, 7, 655369, 131072, 7, 655370, 131072, 7, 655371, 131072, 7, 655372, 131072, 7, 655373, 131072, 7, 655374, 131072, 7, 655375, 131072, 7, 655376, 131072, 7, 655377, 131072, 7, 589842, 131072, 1, 589843, 131072, 1, 589844, 131072, 1, 589845, 131072, 1, 589846, 131072, 1, 589847, 131072, 1, 589848, 131072, 1, 589849, 131072, 1, 655385, 131072, 7, 655384, 131072, 7, 655383, 131072, 7, 655382, 131072, 7, 655378, 131072, 7, 655379, 131072, 7, 655380, 131072, 7, 655381, 131072, 7, 655359, 131072, 1, 655358, 131072, 1, 655357, 131072, 1, 655356, 131072, 1, 655355, 65536, 1, 720891, 65536, 7, 720892, 131072, 7, 720893, 131072, 7, 720894, 131072, 7, 720895, 131072, 7, 589850, 131072, 1, 589851, 131072, 1, 589852, 131072, 1, 589853, 131072, 1, 589854, 131072, 1, 589855, 131072, 1, 589856, 196608, 1, 655392, 196608, 7, 655389, 131072, 7, 655388, 131072, 7, 655387, 131072, 7, 655386, 131072, 7, 655390, 131072, 7, 655391, 131072, 7, 65539, 65536, 1, 65540, 131072, 1, 65541, 131072, 1, 65542, 196608, 1, 131078, 196608, 7, 131077, 131072, 7, 131076, 131072, 7, 131075, 65536, 7, 65544, 65536, 0, 65545, 131072, 0, 65546, 196608, 0, 65548, 65536, 0, 65549, 196608, 0, 131087, 65536, 0, 131088, 196608, 0, 262161, 65536, 0, 262162, 131072, 0, 262163, 131072, 0, 262164, 131072, 0, 262165, 131072, 0, 262166, 131072, 0, 262167, 196608, 0, 458787, 65536, 0, 458788, 131072, 0, 458789, 131072, 0, 458790, 196608, 0)
+
+[node name="Ladder" parent="." index="4" instance=ExtResource("3_flp76")]
+position = Vector2(45, 153)
+
+[node name="Ladder2" parent="." index="5" instance=ExtResource("3_flp76")]
+position = Vector2(45, 134)
+
+[node name="Ladder3" parent="." index="6" instance=ExtResource("3_flp76")]
+position = Vector2(45, 117)
+
+[node name="Ladder4" parent="." index="7" instance=ExtResource("3_flp76")]
+position = Vector2(45, 99)
+
+[node name="Ladder5" parent="." index="8" instance=ExtResource("3_flp76")]
+position = Vector2(45, 80)
+
+[node name="Ladder6" parent="." index="9" instance=ExtResource("3_flp76")]
+position = Vector2(45, 62)
+
+[node name="Ladder7" parent="." index="10" instance=ExtResource("3_flp76")]
+position = Vector2(45, 43)
+
+[node name="Ladder8" parent="." index="11" instance=ExtResource("3_flp76")]
+position = Vector2(45, 27)
+
+[node name="Spikes" parent="." index="12" instance=ExtResource("4_nwqi5")]
+position = Vector2(147, 162)
+
+[node name="Spikes2" parent="." index="13" instance=ExtResource("4_nwqi5")]
+position = Vector2(162, 162)
+
+[node name="Spikes3" parent="." index="14" instance=ExtResource("4_nwqi5")]
+position = Vector2(178, 162)
+
+[node name="Spikes4" parent="." index="15" instance=ExtResource("4_nwqi5")]
+position = Vector2(194, 162)
+
+[node name="Spikes5" parent="." index="16" instance=ExtResource("4_nwqi5")]
+position = Vector2(210, 162)
+
+[node name="Spikes6" parent="." index="17" instance=ExtResource("4_nwqi5")]
+position = Vector2(226, 162)
+
+[node name="Spikes7" parent="." index="18" instance=ExtResource("4_nwqi5")]
+position = Vector2(241, 162)
+
+[node name="Spikes8" parent="." index="19" instance=ExtResource("4_nwqi5")]
+position = Vector2(257, 162)
+
+[node name="Spikes9" parent="." index="20" instance=ExtResource("4_nwqi5")]
+position = Vector2(272, 162)
+
+[node name="Spikes10" parent="." index="21" instance=ExtResource("4_nwqi5")]
+position = Vector2(287, 162)
+
+[node name="Spikes11" parent="." index="22" instance=ExtResource("4_nwqi5")]
+position = Vector2(302, 162)
+
+[node name="WalkingEnemy" parent="." index="23" instance=ExtResource("5_xhqep")]
+position = Vector2(371, 73)
