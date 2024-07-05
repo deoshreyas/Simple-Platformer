@@ -1,9 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://msfq5ns2hicp"]
+[gd_scene load_steps=9 format=3 uid="uid://msfq5ns2hicp"]
 
 [ext_resource type="Texture2D" uid="uid://dygynwh54n0rt" path="res://Assets/Tilemaps/tilemap-characters_packed.png" id="1_7iyfr"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ej4oq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfhwq"]
+atlas = ExtResource("1_7iyfr")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a3il"]
+atlas = ExtResource("1_7iyfr")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6h52"]
+atlas = ExtResource("1_7iyfr")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hlq4"]
 atlas = ExtResource("1_7iyfr")
 region = Rect2(0, 0, 24, 24)
 
@@ -15,7 +27,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a3il")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6h52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hlq4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tom5b"]
@@ -23,10 +54,16 @@ size = Vector2(10, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ej4oq")
+GRAVITY = 5
+MAX_SPEED = 75
+JUMP_SPEED = -160
+JUMP_RELEASE_FORCE = -40
+FALL_GRAVITY = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ho43i")
-animation = &"idle"
+animation = &"run"
+autoplay = "idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
