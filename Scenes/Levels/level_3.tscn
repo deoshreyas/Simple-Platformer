@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyft5x8g85tat"]
+
+[ext_resource type="PackedScene" uid="uid://5tmqdyjn6ijg" path="res://Scenes/Levels/level.tscn" id="1_tfyxk"]
+[ext_resource type="PackedScene" uid="uid://65p5w4vksgvf" path="res://Scenes/world_tiles.tscn" id="2_hig8l"]
+[ext_resource type="PackedScene" uid="uid://duu8sbbcb37rf" path="res://Scenes/spikes.tscn" id="3_bn750"]
+[ext_resource type="PackedScene" uid="uid://lsf6owvxwvnt" path="res://Scenes/walking_enemy.tscn" id="4_om3vd"]
+[ext_resource type="PackedScene" uid="uid://b5ugkn30lyum0" path="res://Scenes/smash_enemy.tscn" id="5_fo14p"]
+[ext_resource type="PackedScene" uid="uid://blp5f3cg4xgak" path="res://Scenes/checkpoint.tscn" id="6_rcit1"]
+[ext_resource type="PackedScene" uid="uid://dfsh8mihf4j38" path="res://Scenes/door.tscn" id="7_yy3tc"]
+[ext_resource type="PackedScene" uid="uid://h65wqolbp0uc" path="res://Scenes/Levels/level_4.tscn" id="8_1xh5k"]
+[ext_resource type="PackedScene" uid="uid://d305335bmtm48" path="res://Scenes/coin.tscn" id="8_6oqgy"]
+
+[node name="Level3" instance=ExtResource("1_tfyxk")]
+
+[node name="Player" parent="." index="1"]
+position = Vector2(-81, -36)
+
+[node name="WorldTiles" parent="." index="3" instance=ExtResource("2_hig8l")]
+layer_0/tile_data = PackedInt32Array(524288, 65536, 1, 524289, 131072, 1, 524290, 131072, 1, 524291, 131072, 1, 524292, 131072, 1, 524293, 131072, 1, 524294, 131072, 1, 524295, 327680, 1, 458759, 65536, 1, 458760, 131072, 1, 458761, 131072, 1, 458762, 131072, 1, 458763, 196608, 1, 524299, 262144, 1, 524300, 131072, 1, 524301, 131072, 1, 524298, 131072, 6, 524297, 131072, 6, 524296, 131072, 6, 524302, 131072, 1, 524303, 131072, 1, 524304, 131072, 1, 524305, 131072, 1, 524306, 131072, 1, 589842, 131072, 7, 589841, 131072, 7, 589840, 131072, 7, 589839, 131072, 7, 589838, 131072, 7, 589837, 131072, 7, 589836, 131072, 7, 589835, 131072, 7, 589834, 131072, 7, 589833, 131072, 7, 589832, 131072, 7, 589831, 131072, 7, 589830, 131072, 7, 589829, 131072, 7, 589828, 131072, 7, 589827, 131072, 7, 589826, 131072, 7, 589825, 131072, 7, 589824, 65536, 7, 524307, 131072, 1, 524308, 131072, 1, 524309, 196608, 1, 589845, 196608, 7, 589844, 131072, 7, 589843, 131072, 7, 524286, 196608, 1, 524285, 131072, 1, 524284, 131072, 1, 524283, 327680, 0, 458747, 0, 6, 393211, 0, 6, 327675, 0, 6, 262139, 0, 6, 196603, 0, 6, 131067, 0, 6, 65531, 0, 1, 589819, 65536, 7, 589820, 131072, 7, 589821, 131072, 7, 589822, 196608, 7, 327678, 65536, 0, 327679, 131072, 0, 262144, 196608, 0, 131074, 65536, 0, 131075, 131072, 0, 131076, 196608, 0, 6, 65536, 0, 7, 131072, 0, 8, 196608, 0, -131062, 65536, 0, -131061, 131072, 0, -131060, 196608, 0, 524315, 65536, 1, 524316, 131072, 1, 524317, 131072, 1, 524318, 196608, 1, 589854, 196608, 7, 589853, 131072, 7, 589852, 131072, 7, 589851, 65536, 7, 13, 0, 0, 131086, 0, 0, 262159, 0, 1, 393232, 131072, 7, 393233, 131072, 0, 393234, 131072, 0, 393235, 131072, 0, 393236, 196608, 7, 327700, 0, 1, 327696, 196608, 1, 393231, 65536, 7, 327695, 65536, 6)
+
+[node name="Spikes" parent="." index="4" instance=ExtResource("3_bn750")]
+position = Vector2(12, 144)
+
+[node name="Spikes2" parent="." index="5" instance=ExtResource("3_bn750")]
+position = Vector2(29, 144)
+
+[node name="Spikes3" parent="." index="6" instance=ExtResource("3_bn750")]
+position = Vector2(46, 144)
+
+[node name="Spikes4" parent="." index="7" instance=ExtResource("3_bn750")]
+position = Vector2(63, 144)
+
+[node name="Spikes5" parent="." index="8" instance=ExtResource("3_bn750")]
+position = Vector2(80, 144)
+
+[node name="Spikes6" parent="." index="9" instance=ExtResource("3_bn750")]
+position = Vector2(97, 144)
+
+[node name="Spikes7" parent="." index="10" instance=ExtResource("3_bn750")]
+position = Vector2(114, 144)
+
+[node name="Spikes8" parent="." index="11" instance=ExtResource("3_bn750")]
+position = Vector2(136, 127)
+
+[node name="Spikes9" parent="." index="12" instance=ExtResource("3_bn750")]
+position = Vector2(153, 127)
+
+[node name="Spikes10" parent="." index="13" instance=ExtResource("3_bn750")]
+position = Vector2(170, 127)
+
+[node name="Spikes11" parent="." index="14" instance=ExtResource("3_bn750")]
+position = Vector2(187, 127)
+
+[node name="Spikes12" parent="." index="15" instance=ExtResource("3_bn750")]
+position = Vector2(204, 127)
+
+[node name="Spikes13" parent="." index="16" instance=ExtResource("3_bn750")]
+position = Vector2(226, 144)
+
+[node name="Spikes14" parent="." index="17" instance=ExtResource("3_bn750")]
+position = Vector2(244, 144)
+
+[node name="Spikes15" parent="." index="18" instance=ExtResource("3_bn750")]
+position = Vector2(261, 144)
+
+[node name="WalkingEnemy" parent="." index="19" instance=ExtResource("4_om3vd")]
+position = Vector2(315, 108)
+
+[node name="SmashEnemy" parent="." index="20" instance=ExtResource("5_fo14p")]
+position = Vector2(369, 16)
+
+[node name="SmashEnemy2" parent="." index="21" instance=ExtResource("5_fo14p")]
+position = Vector2(135, -71)
+
+[node name="Checkpoint" parent="." index="22" instance=ExtResource("6_rcit1")]
+position = Vector2(212, -45)
+
+[node name="Door" parent="." index="23" instance=ExtResource("7_yy3tc")]
+position = Vector2(521, 132)
+level = ExtResource("8_1xh5k")
+
+[node name="Coins" type="Node" parent="." index="25"]
+
+[node name="Coin" parent="Coins" index="0" instance=ExtResource("8_6oqgy")]
+position = Vector2(-9, 55)
+
+[node name="Coin10" parent="Coins" index="1" instance=ExtResource("8_6oqgy")]
+position = Vector2(60, 17)
+
+[node name="Coin11" parent="Coins" index="2" instance=ExtResource("8_6oqgy")]
+position = Vector2(136, -11)
+
+[node name="Coin12" parent="Coins" index="3" instance=ExtResource("8_6oqgy")]
+position = Vector2(347, 96)
+
+[node name="Coin2" parent="Coins" index="4" instance=ExtResource("8_6oqgy")]
+position = Vector2(245, -10)
+
+[node name="Coin4" parent="Coins" index="5" instance=ExtResource("8_6oqgy")]
+position = Vector2(279, 62)
+
+[node name="Coin6" parent="Coins" index="6" instance=ExtResource("8_6oqgy")]
+position = Vector2(436, 119)
+
+[node name="Coin9" parent="Coins" index="7" instance=ExtResource("8_6oqgy")]
+position = Vector2(437, 159)

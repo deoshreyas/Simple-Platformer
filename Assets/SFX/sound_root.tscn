@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bct8c0ipf20qa"]
+[gd_scene load_steps=6 format=3 uid="uid://bct8c0ipf20qa"]
 
 [ext_resource type="Script" path="res://Assets/SFX/sound_root.gd" id="1_b13px"]
 [ext_resource type="AudioStream" uid="uid://dafitqfcmiilu" path="res://Assets/SFX/jump.wav" id="2_4trn1"]
 [ext_resource type="AudioStream" uid="uid://boeiog4jkejwe" path="res://Assets/SFX/hurt.wav" id="3_cpgwu"]
 [ext_resource type="AudioStream" uid="uid://d2iafn05asr3y" path="res://Assets/SFX/Background.mp3" id="4_hxxog"]
+[ext_resource type="AudioStream" uid="uid://cbxp5a535acr1" path="res://Assets/SFX/coin.wav" id="4_ilp03"]
 
 [node name="SoundRoot" type="Node"]
 script = ExtResource("1_b13px")
@@ -14,6 +15,10 @@ volume_db = 1.0
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cpgwu")
+volume_db = 1.0
+
+[node name="Coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ilp03")
 volume_db = 1.0
 
 [node name="Bg" type="AudioStreamPlayer" parent="."]
