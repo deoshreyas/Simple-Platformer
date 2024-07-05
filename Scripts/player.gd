@@ -1,6 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
+enum { MOVE, CLIMB }
+
+var state = MOVE
+
 @export var GRAVITY = 4
 @export var MAX_SPEED = 50
 @export var JUMP_SPEED = -130
@@ -10,13 +14,21 @@ class_name Player
 @export var FALL_GRAVITY = 4
 
 @onready var sprite = $AnimatedSprite2D
+@onready var ladderCheck = $LadderCheckRaycast
 
 func _physics_process(_delta):
+	var input_axis_x = Input.get_axis("left", "right")
+	var input_axis_y = Input.get_axis("up", "down")
+	match state:
+		MOVE: move_state(input_axis_x)
+		CLIMB: climb_state(input_axis_y)
+
+func move_state(input_axis):
+	if is_on_ladder() and Input.is_action_pressed("up"):
+		state = CLIMB
 	apply_gravity()
-	var input_strength = Input.get_action_strength("right") - Input.get_action_strength("left")
-	
-	if input_strength!=0:
-		apply_acceleration(input_strength)
+	if input_axis!=0:
+		apply_acceleration(input_axis)
 		sprite.play("run")
 	else:
 		apply_friction()
@@ -38,6 +50,21 @@ func _physics_process(_delta):
 	if just_landed:
 		sprite.play("run")
 		sprite.frame = 1
+
+func climb_state(input_axis):
+	if not is_on_ladder():
+		state = MOVE
+	if input_axis!=0:
+		sprite.play("run")
+	else:
+		sprite.play("idle")
+	velocity.y = input_axis * MAX_SPEED
+	move_and_slide()
+
+func is_on_ladder():
+	if not ladderCheck.is_colliding(): return false 
+	if ladderCheck.get_collider() is Ladder: return true 
+	return false
 	
 func apply_gravity():
 	velocity.y += GRAVITY

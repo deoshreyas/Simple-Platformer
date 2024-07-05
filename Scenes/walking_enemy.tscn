@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://lsf6owvxwvnt"]
+[gd_scene load_steps=8 format=3 uid="uid://lsf6owvxwvnt"]
 
 [ext_resource type="Texture2D" uid="uid://dygynwh54n0rt" path="res://Assets/Tilemaps/tilemap-characters_packed.png" id="1_cngst"]
 [ext_resource type="Script" path="res://Scripts/walking_enemy.gd" id="1_v765x"]
+[ext_resource type="PackedScene" uid="uid://bgc28rxqy1l2w" path="res://Scenes/hitbox.tscn" id="3_ae4io"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvuxr"]
 atlas = ExtResource("1_cngst")
@@ -51,3 +52,8 @@ target_position = Vector2(0, 10)
 [node name="LedgeCheck2" type="RayCast2D" parent="."]
 position = Vector2(-7, -2)
 target_position = Vector2(0, 10)
+
+[node name="Hitbox" parent="." instance=ExtResource("3_ae4io")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PackedVector2Array(-8, -2, -8, -11, -2, -15, -1, -17, 0, -17, 1, -15, 7, -11, 7, -2)
