@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh7ps4c1emje8"]
+
+[ext_resource type="Texture2D" uid="uid://dygynwh54n0rt" path="res://Assets/Tilemaps/tilemap-characters_packed.png" id="1_sqq8e"]
+[ext_resource type="PackedScene" uid="uid://bgc28rxqy1l2w" path="res://Scenes/hitbox.tscn" id="2_ky051"]
+
+[sub_resource type="Curve2D" id="Curve2D_tscqh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18hie"]
+radius = 9.0
+
+[node name="SpikeEnemyPath" type="Path2D"]
+curve = SubResource("Curve2D_tscqh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[node name="SpikeEnemy" type="Node2D" parent="PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/SpikeEnemy"]
+texture = ExtResource("1_sqq8e")
+region_enabled = true
+region_rect = Rect2(191.31, -0.208942, 24.6215, 24.6215)
+
+[node name="Hitbox" parent="PathFollow2D/SpikeEnemy" instance=ExtResource("2_ky051")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/SpikeEnemy/Hitbox"]
+shape = SubResource("CircleShape2D_18hie")

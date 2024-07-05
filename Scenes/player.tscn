@@ -60,6 +60,7 @@ MAX_SPEED = 75
 JUMP_SPEED = -160
 JUMP_RELEASE_FORCE = -40
 FALL_GRAVITY = 2
+DOUBLE_JUMPS = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ho43i")
@@ -78,3 +79,14 @@ position = Vector2(0, 1)
 target_position = Vector2(0, 15)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="JumpBuffer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="JumpBuffer" to="." method="_on_jump_buffer_timeout"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
